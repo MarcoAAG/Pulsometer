@@ -21,6 +21,8 @@
 #define TX BIT2     //P1.2
 
 uint8_t FlagTimer = 0;
+//uint8_t FlagRX = 0;
+uint8_t Connected = 0;
 
 void initMapReg(void);
 void protocolInit(void);
@@ -34,12 +36,18 @@ int main(void)
 
 	initMapReg();
 	clockInit();
-	timerAInit((uint32_t)5000);   //Rate in micro seconds
 	sciInit();
 	sciSetPorts(TX, RX);
 
     /* enable interrupts */
     _BIS_SR(GIE);
+
+    protocolInit();
+    if(Connected == 1){
+        timerAInit((uint32_t)5000);   //Rate in micro seconds
+        P1OUT |= BIT0;
+    }
+
 
     while(1){
 
@@ -74,12 +82,6 @@ __interrupt void Timer_A(void)
 {
     FlagTimer = 1;
 }
-#pragma vector=USCIAB0RX_VECTOR
-__interrupt void USCI0RX_ISR(void)
-{
-    //if(UCA0RXBUF == 49)
-
-}
 
 
 void initMapReg(void)
@@ -90,9 +92,27 @@ void initMapReg(void)
 
     P1DIR |= BIT6;
     P1OUT &= ~BIT6;
+
+    P1DIR |= BIT0;
+    P1OUT &= ~BIT0;
 }
 
 void protocolInit(void)
 {
+    const uint8_t INIT_DATA = '@';
+    uint8_t data_receiver;
+    //uint8_t tmp = 0;
+
+    sendByte(INIT_DATA);
+    sendString("\r\n");
+
+    data_receiver = sciRead();
+
+    while(data_receiver != 'O'){
+        sendByte(INIT_DATA);
+        sendString("\r\n");
+        data_receiver = sciRead();
+    }
+    Connected = 1;
 
 }

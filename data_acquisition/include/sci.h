@@ -24,5 +24,6 @@ void sciSetPorts(uint8_t _tx, uint8_t _rx);
 void sendByte(uint8_t _c);
 void sciSendData(uint8_t *text, uint32_t length);
 void sendString(uint8_t *_str);
+uint8_t sciRead(void);
 
 #endif /* INCLUDE_SCI_H_ */

@@ -35,7 +35,7 @@ void sciInit(void)
     UCA0CTL1 &= ~UCSWRST;
 
     /* #5 */
-    IE2 |= UCA0RXIE;
+    //IE2 |= UCA0RXIE;
 }
 
 void sciSetPorts(uint8_t _tx, uint8_t _rx)
@@ -137,4 +137,16 @@ void sciSendData(uint8_t *text, uint32_t length)
         sendByte(txt1);
         sendByte(txt);
     };
+}
+
+/** @fn uint8_t sciRead(void)
+*   @brief Receives Byte
+*   @param[out] byte received
+*
+*   receive a byte in polling mode
+*/
+uint8_t sciRead(void)
+{
+    while (!(IFG2&UCA0TXIFG));                // USCI_A0 TX buffer ready?
+    return(UCA0RXBUF);                        // return data
 }
