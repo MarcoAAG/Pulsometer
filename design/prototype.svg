@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="960"
+   height="540"
+   viewBox="0 0 253.99999 142.875"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="prototype.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="231.70105"
+     inkscape:cy="367.74346"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer4"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="bg"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(6.1615829,-107.63391)">
+    <rect
+       style="opacity:1;fill:#323232;fill-opacity:0.99043059;stroke:none;stroke-width:0.81951523;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect820"
+       width="254"
+       height="142.875"
+       x="-6.1615829"
+       y="107.63391"
+       ry="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="topBar"
+     transform="translate(52.652657,-1.1328125e-6)"
+     style="display:inline">
+    <g
+       id="g862">
+      <rect
+         y="1.1328125e-06"
+         x="-52.652657"
+         height="15.875"
+         width="254"
+         id="rect838"
+         style="opacity:1;fill:none;fill-opacity:0.99043059;stroke:none;stroke-width:0.23400776;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text857"
+         y="11.821585"
+         x="41.909496"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58333302px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff;"
+           y="11.821585"
+           x="41.909496"
+           id="tspan855"
+           sodipodi:role="line">Pulsometer</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="core">
+    <rect
+       style="opacity:1;fill:#fefefe;fill-opacity:0.99043059;stroke:none;stroke-width:0.35641566;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect865"
+       width="254"
+       height="105.83333"
+       x="4.4482422e-07"
+       y="15.875" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat,  weight=255';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="108.5674"
+       y="66.978386"
+       id="text869"><tspan
+         sodipodi:role="line"
+         id="tspan867"
+         x="108.5674"
+         y="66.978386"
+         style="font-style:normal;font-variant:normal;font-stretch:normal;font-size:7.05555534px;font-family:Montserrat;-inkscape-font-specification:'Montserrat,  weight=255';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">Version 1.0</tspan><tspan
+         sodipodi:role="line"
+         x="108.5674"
+         y="75.797829"
+         style="font-style:normal;font-variant:normal;font-stretch:normal;font-size:7.05555534px;font-family:Montserrat;-inkscape-font-specification:'Montserrat,  weight=255';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+         id="tspan871">MarcoAAG</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="belowBar">
+    <g
+       id="g917">
+      <rect
+         y="121.70833"
+         x="-4.6777345e-08"
+         height="21.166666"
+         width="254"
+         id="rect873"
+         style="display:inline;opacity:1;fill:#313131;fill-opacity:0.99215686;stroke:none;stroke-width:0.21825546;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <g
+         transform="translate(-5.8329525,-59.691445)"
+         id="g903">
+        <rect
+           style="display:inline;opacity:1;fill:#773636;fill-opacity:0.99215686;stroke:none;stroke-width:0.30000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect875"
+           width="38.754082"
+           height="9.6217022"
+           x="15.254141"
+           y="187.17226"
+           ry="3.7797618" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, weight=255';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.054441"
+           y="194.22678"
+           id="text898"><tspan
+             sodipodi:role="line"
+             id="tspan896"
+             x="20.054441"
+             y="194.22678"
+             style="font-style:normal;font-variant:normal;font-stretch:normal;font-size:7.05555534px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, weight=255';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.26458332">connect</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
