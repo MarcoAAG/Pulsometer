@@ -7,4 +7,7 @@
 /data_acquisition/targetConfigs/*
 /data_acquisition/.launches/*
 /data_acquisition/.settings/*
+/data_acquisition/.cproject
+/data_acquisition/.project
+/data_acquisition/lnk_msp430g2553.cmd
 
