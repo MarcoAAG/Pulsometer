@@ -123,7 +123,15 @@ class MainWindow(QMainWindow):
             self.conn_dlg_timer.stop()
 
     def connectionTimer(self):
-        print(self.port.protocolInit())
+        self.connected = self.port.protocolInit()
+        print(self.connected)
+        if(self.connected == 0):
+            self.conn_dlg_timer.stop()
+            self.conn_dlg.setStandardButtons(QMessageBox.Ok)
+            self.conn_dlg.setWindowTitle("Connected")
+            self.conn_dlg.setText("Connected successfully")
+            self.layout.itemAt(1).widget().deleteLater()
+            self.plotGraph()
 
     def btnClicked(self):
         print("Clicked")
@@ -134,8 +142,6 @@ class MainWindow(QMainWindow):
 
         if(is_connected == 0):
             self.connectionDlg()
-#             self.layout.itemAt(1).widget().deleteLater()
-#             self.plotGraph()
 
 
     def plotGraph(self):

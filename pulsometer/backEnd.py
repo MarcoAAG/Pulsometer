@@ -37,19 +37,21 @@ class backEnd:
     def protocolInit(self):
         self.receivedChar = self.readData()
         if(self.receivedChar[0] != "@"):
+            self.serial_connection.write('N'.encode())
             return 1
         else:
-            self.serial_connection.write("ok")
+            self.serial_connection.write('O'.encode())
             return 0
-#
-#     def isReadable(self):
-#         return self.serial_connection.readable()
+
 
 # def main():
 #     my_port = backEnd("/dev/ttyUSB0", 9600, serial.PARITY_NONE, serial.STOPBITS_ONE, serial.EIGHTBITS, 0.01)
 #     while(1):
 #         print(my_port.readData())
-#
+#     connected = my_port.protocolInit()
+#     while(connected == 1):
+#         connected = my_port.protocolInit()
+
 #
 # if __name__ == "__main__":
 #     try:
