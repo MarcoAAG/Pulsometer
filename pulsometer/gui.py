@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
 
     def connectionTimer(self):
         self.connected = self.port.protocolInit()
-        print(self.connected)
+#         print(self.connected)
         if(self.connected == 0):
             self.conn_dlg_timer.stop()
             self.conn_dlg.setStandardButtons(QMessageBox.Ok)
@@ -151,16 +151,18 @@ class MainWindow(QMainWindow):
         self.graphWidget.setGeometry(QRect(25,25,550,550))
         self.graphWidget.setBackground((40,40,40))
 
-        self.hour = np.random.normal(size=300)
+        self.hour = np.zeros(500,dtype=int)
         self.plt = self.graphWidget.plot(self.hour)
 
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update)
-        self.timer.start(10)
+        self.timer.start(8)
 
     def update(self):
+#         print(self.port.getData())
+#         print("-----")
         self.hour[:-1] = self.hour[1:]
-        self.hour[-1] = np.random.normal()
+        self.hour[-1] = self.port.getData()
         self.plt.setData(self.hour)
 
 

@@ -43,6 +43,11 @@ class backEnd:
             self.serial_connection.write('O'.encode())
             return 0
 
+    def getData(self):
+        self.data = self.readData()
+        self.data2send = int(self.data,16)
+        return self.data2send
+
 
 # def main():
 #     my_port = backEnd("/dev/ttyUSB0", 9600, serial.PARITY_NONE, serial.STOPBITS_ONE, serial.EIGHTBITS, 0.01)
