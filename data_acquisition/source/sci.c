@@ -2,7 +2,7 @@
 *   @brief Serial Communication Interface Driver Implementation File
 *   @date 20.April.2021
 *   @version 1.0
-*   This file contains Timers Implementation.
+*   This file contains SCI Implementation.
 */
 #include"sci.h"
 

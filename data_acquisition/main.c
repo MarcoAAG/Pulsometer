@@ -16,6 +16,7 @@
 #include "clock.h"
 #include "timer.h"
 #include "sci.h"
+#include "adc.h"
 
 #define RX BIT1     //P1.1
 #define TX BIT2     //P1.2
@@ -31,13 +32,14 @@ int main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	
-	uint8_t data2send = 0;
+	uint16_t data2send = 0;
 	uint8_t i = 0;
 
 	initMapReg();
 	clockInit();
 	sciInit();
 	sciSetPorts(TX, RX);
+	adcInit();
 
     /* enable interrupts */
     _BIS_SR(GIE);
@@ -45,7 +47,7 @@ int main(void)
     protocolInit();
     if(Connected == 1){
         timerAInit((uint32_t)5000);   //Rate in micro seconds
-        P1OUT |= BIT0;
+        //P1OUT |= BIT0;
     }
 
 
@@ -53,19 +55,10 @@ int main(void)
 
         if(FlagTimer){
 
-            if(i<100){
-                data2send += 1;
-            }
-            if(i>=100 && i<200){
-                data2send -= 1;
-            }
-            if(data2send == 1){
-                i = 0;
-            }
-            i += 1;
-
+            data2send = readSingChanAdc();
+            //data2send = 1025;
             P1OUT ^= BIT6;
-            sciSendData((uint8_t *)&data2send, 1);
+            sciSendData((uint8_t *)&data2send, 2);
             sendString("\r\n");
             FlagTimer = 0;
         }
@@ -93,8 +86,8 @@ void initMapReg(void)
     P1DIR |= BIT6;
     P1OUT &= ~BIT6;
 
-    P1DIR |= BIT0;
-    P1OUT &= ~BIT0;
+    //P1DIR |= BIT0;
+    //P1OUT &= ~BIT0;
 }
 
 void protocolInit(void)
