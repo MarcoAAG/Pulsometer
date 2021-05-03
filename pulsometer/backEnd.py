@@ -5,8 +5,16 @@
 # 20.April.2021
 
 import serial
+import serial.tools.list_ports
 import sys
 import os
+
+def findPorts():
+    ports_name = []
+    ports = serial.tools.list_ports.comports()
+    for i in ports:
+        ports_name.append(i.device)
+    return ports_name
 
 class backEnd:
     def __init__(self, _port, _baudrate, _parity, _stopbits, _bytesize, _timeout):

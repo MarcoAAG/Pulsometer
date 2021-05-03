@@ -12,13 +12,17 @@ import pyqtgraph as pg
 from pyqtgraph import PlotWidget, plot
 
 from PyQt5.QtCore import QSize, Qt, QTimer, QRect
-from PyQt5.QtGui import QColor, QPalette, QFont
+from PyQt5.QtGui import QColor, QPalette, QFont, QIcon
 from PyQt5.QtWidgets import (QApplication,
                              QMainWindow,
                              QMessageBox,
                              QPushButton,
                              QLabel,
                              QWidget,
+                             QToolBar,
+                             QAction,
+                             QCheckBox,
+                             QStatusBar,
                              QHBoxLayout,
                              QVBoxLayout,
                              QGridLayout)
@@ -57,10 +61,26 @@ class MainWindow(QMainWindow):
 
     def setBtn(self):
         self.button = QPushButton("Connect", self)
+        self.button.setFont(QFont('Montserrat', 9))
+#         self.button.resize(350, 150)
+        self.button.adjustSize()
         self.button.setStyleSheet("background-color: rgb(119,54,54); color: rgb(255,255,255);")
-        self.button.setCheckable(True)
+#         self.button.setCheckable(True)
         self.button.clicked.connect(self.btnClicked)
         return(self.button)
+
+    def setTopBar(self):
+        #set topBar
+        self.portbtn = QAction(QIcon("images/portIcon.png"),"Select Port", self)
+        self.portbtn.setStatusTip("Port")
+
+        self.menu = self.menuBar()
+
+        self.file_menu = self.menu.addMenu("&File")
+        self.file_port_menu = self.file_menu.addMenu("SelectPort")
+        self.file_port_menu.addAction(self.portbtn)
+#         self.file_menu.addAction(self.portbtn)
+
 
     def guiInit(self):
         self.setWindowTitle("Pulsometer")
@@ -83,6 +103,8 @@ class MainWindow(QMainWindow):
 
 #       Set button
         self.layout.addWidget(self.setBtn(),2,0, alignment=Qt.AlignCenter|Qt.AlignBottom)
+
+        self.setTopBar()
 
 #         Organize layout into center
         self.widget = QWidget()
