@@ -28,12 +28,11 @@ uint8_t Connected = 0;
 void initMapReg(void);
 void protocolInit(void);
 
-int main(void)
+void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	
 	uint16_t data2send = 0;
-	uint8_t i = 0;
 
 	initMapReg();
 	clockInit();
@@ -56,7 +55,6 @@ int main(void)
         if(FlagTimer){
 
             data2send = readSingChanAdc();
-            //data2send = 1025;
             P1OUT ^= BIT6;
             sciSendData((uint8_t *)&data2send, 2);
             sendString("\r\n");
@@ -64,8 +62,6 @@ int main(void)
         }
 
     }
-
-	return 0;
 }
 
 
@@ -85,16 +81,12 @@ void initMapReg(void)
 
     P1DIR |= BIT6;
     P1OUT &= ~BIT6;
-
-    //P1DIR |= BIT0;
-    //P1OUT &= ~BIT0;
 }
 
 void protocolInit(void)
 {
     const uint8_t INIT_DATA = '@';
     uint8_t data_receiver;
-    //uint8_t tmp = 0;
 
     sendByte(INIT_DATA);
     sendString("\r\n");
@@ -109,3 +101,4 @@ void protocolInit(void)
     Connected = 1;
 
 }
+

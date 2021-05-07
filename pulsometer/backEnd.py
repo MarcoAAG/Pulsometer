@@ -27,6 +27,8 @@ class backEnd:
                 bytesize = _bytesize,\
                 timeout = _timeout\
             )
+            self.adc_data = [0,0]
+            self.y = [0.0 ,0.0]
         except Exception as e:
             print("Error open serial port: " + str(e))
             sys.exit(0)
@@ -56,6 +58,21 @@ class backEnd:
         self.data2send = int(self.data,16)
         return self.data2send
 
+    def lowPassFilter(self):
+        self.A = 0.1
+
+        self.adc_data[1] = self.adc_data[0]
+        self.adc_data[0] = self.getData()
+
+        self.datafilter2send = (self.adc_data[0] + self.adc_data[1]) / self.A
+
+        return self.datafilter2send
+
+    def lowPF(self):
+        self.alpha = 0.05
+        self.y[1] = self.y[0]
+        self.y[0] = (self.alpha * self.getData()) + (1.0 - self.alpha)*self.y[1]
+        return self.y[0]
 
 # def main():
 #     my_port = backEnd("/dev/ttyUSB0", 9600, serial.PARITY_NONE, serial.STOPBITS_ONE, serial.EIGHTBITS, 0.01)

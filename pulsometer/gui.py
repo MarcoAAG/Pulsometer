@@ -178,13 +178,13 @@ class MainWindow(QMainWindow):
 
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.update)
-        self.timer.start(8)
+        self.timer.start(7)
 
     def update(self):
-#         print(self.port.getData())
-#         print("-----")
         self.hour[:-1] = self.hour[1:]
-        self.hour[-1] = self.port.getData()
+#         self.hour[-1] = self.port.getData()
+#         self.hour[-1] = self.port.lowPassFilter()
+        self.hour[-1] = self.port.lowPF()
         self.plt.setData(self.hour)
 
 
